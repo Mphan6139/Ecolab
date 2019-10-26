@@ -1,4 +1,4 @@
-mport pyfirmata
+import pyfirmata
 import time
 
 board = pyfirmata.Arduino('/dev/cu.usbmodem14101')
