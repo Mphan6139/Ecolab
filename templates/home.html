@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            
+            {% if title %}
+                <title>I  have a title: {{title}}</title>
+            {% else %}
+                <title>Default</title>
+            {% endif %}
+        
+            <body>
+                {% for post in posts %}
+                    <h1>{{post.title}}</h1>
+                    <p> By {{post.author}}</p>
+                {% endfor %}
+            </body>
+        </head>
+    </html>
