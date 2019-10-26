@@ -21,3 +21,5 @@ if 'COMPUTER_VISION_ENDPOINT' in os.environ:
 else:
     print("\nSet the COMPUTER_VISION_ENDPOINT environment variable.\n**Restart your shell or IDE for changes to take effect.**")
     sys.exit()
+
+
