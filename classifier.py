@@ -28,15 +28,13 @@ def classify(image_path):
 def take_picture():
     camera = cv.VideoCapture(0)
     ret, frame = camera.read()
-    print(ret)
+    # print(ret)
     cv.imshow("test", frame)
     img_name = "cv_frame.png"
     cv.imwrite(img_name, frame)
     print("{} written!".format(img_name))
     camera.release()
     cv.destroyAllWindows()
-    return classify('./cv_frame.png')
-
-
-
-
+    x = classify('./cv_frame.png')
+    print(x)
+    return x
