@@ -1,6 +1,8 @@
 from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
 from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateEntry
+import cv2 as cv
+import numpy as np
 
 def classify(image_path):
     # Replace with a valid key
@@ -24,4 +26,17 @@ def classify(image_path):
             return prediction.tag_name
     #sorted_results = sorted(result,key=lambda x : x[1])
     #return sorted_results[0][0]
+def take_picture():
+    camera = cv.VideoCapture(0)
+    ret, frame = camera.read()
+    print(ret)
+    cv.imshow("test", frame)
+    img_name = "cv_frame.png"
+    cv.imwrite(img_name, frame)
+    print("{} written!".format(img_name))
+    camera.release()
+    cv.destroyAllWindows()
+take_picture()
+
+
 
