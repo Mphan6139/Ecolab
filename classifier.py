@@ -21,7 +21,8 @@ def classify(image_path):
             project.id, publish_iteration_name, image_contents.read())
         # Display the results.
         for prediction in results.predictions:
-            print("\t" + prediction.tag_name +
-                ": {0:.2f}%".format(prediction.probability * 100))
+            return prediction.tag_name
+    #sorted_results = sorted(result,key=lambda x : x[1])
+    #return sorted_results[0][0]
 
-classify('./images/tangerine.jpg')
+
