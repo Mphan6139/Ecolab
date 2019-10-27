@@ -3,7 +3,6 @@ from azure.cognitiveservices.vision.customvision.training import CustomVisionTra
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateEntry
 import cv2 as cv
 
-
 def classify(image_path):
     # Replace with a valid key
     prediction_key = "c3741dd758584195b3bcd4331c4ba6c0"
@@ -26,8 +25,6 @@ def classify(image_path):
             return prediction.tag_name
     #sorted_results = sorted(result,key=lambda x : x[1])
     #return sorted_results[0][0]
-
-
 def take_picture():
     camera = cv.VideoCapture(0)
     ret, frame = camera.read()
@@ -41,4 +38,5 @@ def take_picture():
     return classify('./cv_frame.png')
 
 print(take_picture())
+
 

@@ -35,7 +35,7 @@ image_data = open(image_path, "rb").read()
 headers = {'Ocp-Apim-Subscription-Key': subscription_key,
            'Content-Type': 'application/octet-stream'}
 params = {'visualFeatures': 'Categories,Description,Color'}
-response = requests.post(analyze_url, headers=headers, params=params, data=image_data)
+response = requests.post(analyze_url, headers=headers, params=params, data={'Body': image_data})
 #, headers = headers, params = params, data = image_data
 response.raise_for_status()
 
@@ -43,7 +43,7 @@ response.raise_for_status()
 # relevant caption for the image is obtained from the 'description' property.
 analysis = response.json()
 print(analysis)
-image_caption = analysis["description"]["captions"][0]["text"].capitalize()
+#image_caption = analysis["description"]["captions"][0]["text"].capitalize()
 
 # Display the image and overlay it with the caption.
 #image = Image.open(BytesIO(image_data))

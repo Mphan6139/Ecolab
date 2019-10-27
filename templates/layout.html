@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html style="height:100%">
+
+<head style="height:100%">
+
+    {% if title %}
+    <title>I have a title: {{title}}</title>
+    {% else %}
+    <title>Default</title>
+    {% endif %}
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+</head>
+
+</html>
