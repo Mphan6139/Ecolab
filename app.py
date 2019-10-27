@@ -1,7 +1,10 @@
 from flask import Flask, render_template, flash, request
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 from landing import *
+from multiprocessing import Process
 from ardware import *
+from threading import Thread
+
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -25,7 +28,7 @@ def my_form_post():
             currUser = user
             redirect('/landing')
             return currUser
-    
+
     return False
 
 @app.route('/landing')
@@ -34,6 +37,11 @@ def landing():
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
-
-
+    # a = ArdWare()
+    # print(a)
+    # p.start()
+    t = Thread(target=d.run, args=())
+    t.start()
+    app.run(debug = True, use_reloader=False)
+    # p.join()
+    t.join()

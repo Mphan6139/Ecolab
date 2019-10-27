@@ -29,9 +29,11 @@ def take_picture():
     camera = cv.VideoCapture(0)
     ret, frame = camera.read()
     # print(ret)
-    cv.imshow("test", frame)
+    # cv.imshow("test", frame)
     img_name = "cv_frame.png"
     cv.imwrite(img_name, frame)
+
+
     print("{} written!".format(img_name))
     camera.release()
     cv.destroyAllWindows()
