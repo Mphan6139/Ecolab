@@ -24,4 +24,4 @@ def classify(image_path):
             return prediction.tag_name
     #sorted_results = sorted(result,key=lambda x : x[1])
     #return sorted_results[0][0]
-print(classify('./boba.jpg'))
+
