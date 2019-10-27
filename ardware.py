@@ -1,6 +1,8 @@
 import pyfirmata
 import asyncio
 import time
+from classifier import *
+from landing import *
 
 board = pyfirmata.Arduino('/dev/cu.usbmodem14101')
 buttonPin = 2
@@ -52,4 +54,4 @@ class ArdWare:
 
 
 ## testing
-a = ArdWare()
+a = ArdWare(take_picture, get_user)
