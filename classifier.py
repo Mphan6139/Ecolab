@@ -38,7 +38,7 @@ def take_picture():
     print("{} written!".format(img_name))
     camera.release()
     cv.destroyAllWindows()
+    return classify('./cv_frame.png')
 
+take_picture()
 
-#take_picture()
-print(classify('./cv_frame.png'))
