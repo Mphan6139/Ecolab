@@ -1,18 +1,18 @@
 <html>
 <head>
-    <title>EcoLab: {{currUser.name}}</title>
-    
+    <title>EcoLab: {{user.name}}</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
-</head> 
+</head>
 <body>
 
-    <h2 id="welcome-text">Welcome, {{currUser.name}}!</h2>
+    <h2 id="welcome-text">Welcome, {{user.name}}!</h2>
 
-    <h2 id="points-text">You have: {{currUser.points}} points!</h2>
+    <h2 id="points-text">You have: {{user.points}} points!</h2>
     <!-- <h5 id="points-text">You saved {{x}} greenhouse gases</h2> -->
 
     <div id="history">
@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                {%for h in currUser.history%}
+                {%for h in user.history%}
                 <tr>
                     <th scope="row">{{h['name']}}</th>
                     <td>{{h['points']}}</td>
@@ -52,16 +52,10 @@
                 </tr>
             </thead>
             <tbody>
-                {%for i in range(len(users))%}
-                <tr>
-                    <th scope="row">{{i}}</th>
-                    <td>{{users[i].name}}</td>
-                    <td>{{users[i].points}}</td>
-                </tr>
-                {%endfor%}
+                
             </tbody>
         </table>
     </div>
-    
+
 </body>
 </html>
