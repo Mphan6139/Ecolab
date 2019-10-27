@@ -44,4 +44,4 @@ class User:
         return {self.name, self.points, self.history}
 
 for i in range(3):
-    users.append(User(i, 'User' + str(i)))
+    users.append(User(i, 'user' + str(i)))

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, flash, request
+from flask import Flask, render_template, flash, request, redirect, url_for
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 from landing import *
 from multiprocessing import Process
@@ -19,17 +19,20 @@ def hello():
 
 
 @app.route('/', methods=['POST'])
+# @app.route('/background_process_test')
+# @app.route('/background_process_test')
 def my_form_post():
     text = request.form['text']
     processed_text = text.lower()
 
+    print(processed_text)
     for user in users:
         if user.name == processed_text:
             currUser = user
-            redirect('/landing')
+            redirect(url_for('/landing'))
             return currUser
 
-    return False
+    return 'hi'
 
 @app.route('/landing')
 def landing():
