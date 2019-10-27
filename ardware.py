@@ -7,7 +7,8 @@ from landing import *
 from multiprocessing import Process
 PIDFILE = '/var/run/yourdaemon.pid'
 
-board = pyfirmata.Arduino('/dev/cu.usbmodem14101')
+# board = pyfirmata.Arduino('/dev/cu.usbmodem14101')
+board = pyfirmata.Arduino('COM3')
 buttonDict = {0:2, 1: 5}
 PinDict = {'y':13, 'r': 12, 'b': 11}
 
