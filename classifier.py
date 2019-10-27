@@ -17,7 +17,7 @@ def classify(image_path):
     project = trainer.get_projects()[0]
 
     # Now there is a trained endpoint that can be used to make a prediction
-    results = []
+
     with open(test_image, "rb") as image_contents:
         results = predictor.classify_image(
             project.id, publish_iteration_name, image_contents.read())
