@@ -1,3 +1,4 @@
+import datetime
 users = {}
 recyclable_items = ['water_bottle', 'cans', 'binder_paper']
 landfill = ['boba', 'popchips']
@@ -23,12 +24,15 @@ class User:
     
     def change_points(self, points, history):
         #The person throws trash in the correct bin
-        if result == True:
+        if self.result == True:
             self.points += 1
         else:
             self.points -= 1
         users[self.name] = self.points
-        self.history += self.trash
+       # self.history += self.trash
+    def __str__(self):
+        return {self.name self.points, self.history}
+        
 
     
     
