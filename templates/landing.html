@@ -10,7 +10,58 @@
 </head> 
 <body>
 
-    <h2>Welcome, {{currUser.name}}!</h2>
+    <h2 id="welcome-text">Welcome, {{currUser.name}}!</h2>
+
+    <h2 id="points-text">You have: {{currUser.points}} points!</h2>
+    <!-- <h5 id="points-text">You saved {{x}} greenhouse gases</h2> -->
+
+    <div id="history">
+        <h3 id="history-header">Bin History</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Correct Bin</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for h in currUser.history%}
+                <tr>
+                    <th scope="row">{{h['name']}}</th>
+                    <td>{{h['points']}}</td>
+                    <td>{{h['bin']}}</td>
+                    <td>{{h['date']}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+
+    <div id="leaderboard">
+        <h3 id="leaderboard-header">Leaderboard</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in range(len(users))%}
+                <tr>
+                    <th scope="row">{{i}}</th>
+                    <td>{{users[i].name}}</td>
+                    <td>{{users[i].points}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
     
 </body>
 </html>

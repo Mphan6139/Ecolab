@@ -32,7 +32,7 @@ class User:
         if result in compost:
             bin_name = 'Compost Bin'
 
-        self.history.append({result, pts, bin_name, date.today()})
+        self.history.append({'name':result, 'points':pts, 'bin':bin_name, 'date':date.today()})
         return pts > 0
 
     # def change_points(self, points, history):
