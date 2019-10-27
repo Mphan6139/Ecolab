@@ -1,8 +1,8 @@
-import datetime
+from datetime import date
 users = {}
-recyclable_items = ['water_bottle', 'cans', 'binder_paper']
-landfill = ['boba', 'popchips']
-compost = ['tangerine', 'used_napkins']
+recyclable_items = ['Water', 'cans', 'binder paper']
+landfill = ['boba', 'pop chips']
+compost = ['tangerine', 'used napkins']
 
 
 def get_user(numb):
@@ -16,19 +16,27 @@ class User:
             users[self.name] = points
 
     def process_result(self, result):
-        if self.trash in recyclable_items:
-            return True
-            self.history.append({self.name, self.points, bin, date})
+        if result in recyclable_items:
+            pts = 1
+            bin_name = 'Recycle Bin'
         else:
-            return False
+            pts = -1
+        self.points += pts
+
+        if result in landfill:
+            bin_name = 'Garbage Bin'
+        
+        if result in compost:
+            bin_name = 'Compost Bin'
+
+        self.history.append({result, pts, bin_name, date.today()})
+        return self.points > 0
 
     def change_points(self, points, history):
         #The person throws trash in the correct bin
-        if self.result == True:
-            self.points += 1
-        else:
-            self.points -= 1
+            
         users[self.name] = self.points
        # self.history += self.trash
     def __str__(self):
         return {self.name, self.points, self.history}
+        
