@@ -124,6 +124,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+
+private_vars
 # Private vars file (secret keys!!!)
 private_vars
 
