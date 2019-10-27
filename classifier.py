@@ -40,5 +40,5 @@ def take_picture():
     cv.destroyAllWindows()
     return classify('./cv_frame.png')
 
-take_picture()
+print(take_picture())
 
