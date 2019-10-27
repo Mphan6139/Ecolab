@@ -5,7 +5,8 @@ import time
 from classifier import *
 from landing import *
 from multiprocessing import Process
-PIDFILE = '/var/run/yourdaemon.pid'
+# PIDFILE = '/var/run/yourdaemon.pid'
+# PIDFILE = '//Users/Major League Hacking/yourdaemon.pid'
 
 # board = pyfirmata.Arduino('/dev/cu.usbmodem14101')
 board = pyfirmata.Arduino('COM3')
@@ -48,6 +49,7 @@ class ArdWare():
 
     def run(self):
         while True:
+            # print('hi')
             self.bp1 = board.digital[buttonDict[0]].read()
             self.bp2 = board.digital[buttonDict[1]].read()
             if not self.bp1 and not self.first_run: # button 0 has been pressed
@@ -70,8 +72,8 @@ class ArdWare():
 
         user = get_user(user_num)
         r1 = take_picture()
-        # r2 = user.process_result(r1)
-        r2 = True
+        r2 = user.process_result(r1)
+        # r2 = True
         if r2:
             self.final_light('b')
         else:

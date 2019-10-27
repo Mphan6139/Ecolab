@@ -33,6 +33,7 @@ class User:
             bin_name = 'Compost Bin'
 
         self.history.append({'name':result, 'points':pts, 'bin':bin_name, 'date':date.today()})
+        # print(self.history)
         return pts > 0
 
     # def change_points(self, points, history):
@@ -40,8 +41,8 @@ class User:
     #
     #     users[self.id] = self.points
     #    # self.history += self.trash
-    def __str__(self):
-        return {self.name, self.points, self.history}
+    # def __str__(self):
+    #     return str({self.name, self.points, self.history})
 
 for i in range(3):
     users.append(User(i, 'user' + str(i)))

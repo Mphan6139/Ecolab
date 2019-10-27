@@ -4,6 +4,7 @@ from landing import *
 from multiprocessing import Process
 from ardware import *
 from threading import Thread
+import ast
 
 
 app = Flask(__name__)
@@ -11,7 +12,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['DEBUG'] = True
 app.config['TESTING'] = True
 
-currUser = None
+currUser = users[0]
 
 @app.route("/")
 def hello():
@@ -29,15 +30,13 @@ def my_form_post():
     for user in users:
         if user.name == processed_text:
             currUser = user
-            redirect(url_for('/landing'))
-            return currUser
+            return redirect(url_for('landing'))
 
-    return 'hi'
+    return 'Incorrect Username'
 
 @app.route('/landing')
 def landing():
-    return render_template('landing.html', user=str(currUser))
-
+    return render_template('landing.html', points=currUser.points, name=currUser.name, users=users)
 
 if __name__ == '__main__':
     # a = ArdWare()
