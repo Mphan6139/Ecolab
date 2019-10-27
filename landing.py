@@ -1,7 +1,7 @@
 users = {}
-recyclable_items = [water_bottle, cans, binder_paper]
-landfill = [boba, popchips]
-compost = [tangerine, used_napkins]
+recyclable_items = ['water_bottle', 'cans', 'binder_paper']
+landfill = ['boba', 'popchips']
+compost = ['tangerine', 'used_napkins']
 
 class User:
     def __init__(self, name, points=0, history=[]):
@@ -11,7 +11,7 @@ class User:
             self.history = []
             users[self.name] = points
 
-    def get_user(numb):
+    def get_user(self, numb):
         return users[numb]
 
     def process_result(self, result):
