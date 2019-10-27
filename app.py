@@ -36,7 +36,7 @@ def my_form_post():
 
 @app.route('/landing')
 def landing():
-    return render_template('landing.html', points=currUser.points, name=currUser.name, users=users)
+    return render_template('landing.html', points=currUser.points, name=currUser.name, users=users, history=currUser.history)
 
 if __name__ == '__main__':
     # a = ArdWare()
