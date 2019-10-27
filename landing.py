@@ -6,7 +6,7 @@ compost = ['tangerine', 'used_napkins']
 
 
 def get_user(numb):
-        return users[numb]
+    return users[numb]
 class User:
     def __init__(self, name, points=0, history=[]):
         if self not in users:
@@ -21,7 +21,7 @@ class User:
             self.history.append({self.name, self.points, bin, date})
         else:
             return False
-    
+
     def change_points(self, points, history):
         #The person throws trash in the correct bin
         if self.result == True:
@@ -32,6 +32,3 @@ class User:
        # self.history += self.trash
     def __str__(self):
         return {self.name self.points, self.history}
-        
-
-    

@@ -54,4 +54,4 @@ class ArdWare:
 
 
 ## testing
-a = ArdWare(take_picture)
+a = ArdWare(take_picture, get_user)
