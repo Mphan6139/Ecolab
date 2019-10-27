@@ -5,7 +5,7 @@ from azure.cognitiveservices.vision.customvision.training.models import ImageFil
 def classify(image_path):
     # Replace with a valid key
     prediction_key = "c3741dd758584195b3bcd4331c4ba6c0"
-    prediction_resource_id = "/subscriptions/bad6784e-798e-4bbc-89cf-cb5149375471/resourceGroups/Ecolab(Group)/providers/Microsoft.CognitiveServices/accounts/Ecolab-Prediction"
+    #prediction_resource_id = "/subscriptions/bad6784e-798e-4bbc-89cf-cb5149375471/resourceGroups/Ecolab(Group)/providers/Microsoft.CognitiveServices/accounts/Ecolab-Prediction"
     training_key = 'd898f79af8f84520994849cf82d4a6be'
     ENDPOINT = "https://ecolab-prediction.cognitiveservices.azure.com/"
     publish_iteration_name = "EcoIdentify"
@@ -24,4 +24,4 @@ def classify(image_path):
             print("\t" + prediction.tag_name +
                 ": {0:.2f}%".format(prediction.probability * 100))
 
-
+classify('./images/tangerine.jpg')
