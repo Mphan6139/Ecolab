@@ -2,7 +2,6 @@ from azure.cognitiveservices.vision.customvision.prediction import CustomVisionP
 from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateEntry
 import cv2 as cv
-import numpy as np
 
 def classify(image_path):
     # Replace with a valid key
@@ -10,7 +9,7 @@ def classify(image_path):
     #prediction_resource_id = "/subscriptions/bad6784e-798e-4bbc-89cf-cb5149375471/resourceGroups/Ecolab(Group)/providers/Microsoft.CognitiveServices/accounts/Ecolab-Prediction"
     training_key = 'd898f79af8f84520994849cf82d4a6be'
     ENDPOINT = "https://ecolab-prediction.cognitiveservices.azure.com/"
-    publish_iteration_name = "Iteration2"
+    publish_iteration_name = "Ecolab3"
     test_image = image_path
     trainer = CustomVisionTrainingClient(training_key, endpoint=ENDPOINT)
     predictor = CustomVisionPredictionClient(prediction_key, endpoint=ENDPOINT)
