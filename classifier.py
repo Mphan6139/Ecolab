@@ -24,7 +24,6 @@ print(project.id)
 with open(test_image, "rb") as image_contents:
     results = predictor.classify_image(
         project.id, publish_iteration_name, image_contents.read())
-
     # Display the results.
     for prediction in results.predictions:
         print("\t" + prediction.tag_name +
