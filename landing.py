@@ -31,4 +31,4 @@ class User:
         users[self.name] = self.points
        # self.history += self.trash
     def __str__(self):
-        return {self.name self.points, self.history}
+        return {self.name, self.points, self.history}
