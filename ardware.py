@@ -41,7 +41,7 @@ class ArdWare:
                 self.light('y',1)
                 self.buttonPressed(0)
                 return
-            elif self.bp2 and not self.first_run:
+            elif not self.bp2 and not self.first_run:
                 self.light('y',1)
                 self.buttonPressed(1)
                 return
