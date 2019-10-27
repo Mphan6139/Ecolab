@@ -4,6 +4,9 @@ recyclable_items = ['water_bottle', 'cans', 'binder_paper']
 landfill = ['boba', 'popchips']
 compost = ['tangerine', 'used_napkins']
 
+
+def get_user(numb):
+        return users[numb]
 class User:
     def __init__(self, name, points=0, history=[]):
         if self not in users:
@@ -11,9 +14,6 @@ class User:
             self.points = 0
             self.history = []
             users[self.name] = points
-
-    def get_user(self, numb):
-        return users[numb]
 
     def process_result(self, result):
         if self.trash in recyclable_items:
@@ -33,15 +33,5 @@ class User:
     def __str__(self):
         return {self.name self.points, self.history}
         
-
-    
-    
-
-        
-
-
-   
-    
-
 
     
