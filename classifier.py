@@ -2,7 +2,6 @@ from azure.cognitiveservices.vision.customvision.prediction import CustomVisionP
 from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateEntry
 import cv2 as cv
-import numpy as np
 
 def classify(image_path):
     # Replace with a valid key
