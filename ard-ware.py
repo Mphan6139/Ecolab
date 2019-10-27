@@ -15,62 +15,41 @@ it.start()
 
 board.digital[buttonPin].mode = pyfirmata.INPUT
 
-# while True:
-#     sw = board.digital[buttonPin].read()
-#     if sw is False and not lightOn:
-#         lightOn = True
-#         board.digital[ledPinYellow].write(1)
-#         time.sleep(3)
-#         lightOn = False
-#     elif lightOn:
-#         board.digital[ledPinYellow].write(1)
-#     else:
-#         board.digital[ledPinYellow].write(0)
-#         time.sleep(0.1)
-# while True:
-#     sw = board.digital[buttonPin].read()
-#     #if sw is False:
-#         ## send message to backend
-
+def place_holder():
+    #ArdWare.light('y', 1)
+    return 1
+resulty = lambda x: 'b'
 class ArdWare:
-    def __init__(self,condition = None):
+    def __init__(self,funky = place_holder, gunky = None):
         self.lightOn = False
-        self.condition = condition
+        self.funky = funky
+        if not gunky:
+            self.gunky = resulty
+        else:
+            self.gunky = gunky
         self.loopy()
     def loopy(self):
         while True:
             self.sw = board.digital[buttonPin].read()
-            if not self.sw and not self.lightOn:
-                self.lightOn = True
-                # asyncio.run(self.light('y',1))
+            if not self.sw: # button has been pressed
                 self.light('y',1)
-                time.sleep(3)
-                self.lightOn = False
-            elif self.lightOn:
-                #asyncio.run(self.light('y',1))
-                self.light('y',1)
-            else:
-                #asyncio.run(self.light('y',1))
-                self.light('y',1)
+                self.buttonPressed()
             time.sleep(0.1)
 
     def light(self,color,on_or_off):
         board.digital[PinDict[color]].write(on_or_off)
-    async def buttonPressed(self):
-        return self.sw
+    def buttonPressed(self):
+        r1 = self.funky()
+        r2 = self.gunky(r1)
+        self.final_light(r2)
+
+    def final_light(self, b_or_r):
+        self.light('y', 0)
+        self.light(b_or_r, 1) # turn light on
+        time.sleep(0.1)
+        self.light(b_or_r, 0)
+        self.loopy()
+
 
 ## testing
 a = ArdWare()
-a.light('b',1)
-
-
-
-
-
-
-# while True:
-#     board.digital[LED_BUILTIN].write(1)
-#     time.sleep(1)
-#     board.digital[LED_BUILTIN].write(0)
-#     time.sleep(1)
-
