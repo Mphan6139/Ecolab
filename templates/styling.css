@@ -1,0 +1,24 @@
+body {
+    background-color: #e9ffd6ad;
+
+}
+
+h1 {
+    color: #3c5725;
+    margin-left: 20px;
+}
+
+h2 {
+    color: #1f360c;
+    margin-left: 20px;
+}
+
+h3 {
+    color: #1E5631;
+    margin-left: 40px;
+}
+
+p {
+    border-left: 6px solid rgb(0, 184, 0);
+    background-color: rgba(30, 86, 49, 0.329);
+}
