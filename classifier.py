@@ -9,7 +9,7 @@ def classify(image_path):
     #prediction_resource_id = "/subscriptions/bad6784e-798e-4bbc-89cf-cb5149375471/resourceGroups/Ecolab(Group)/providers/Microsoft.CognitiveServices/accounts/Ecolab-Prediction"
     training_key = 'd898f79af8f84520994849cf82d4a6be'
     ENDPOINT = "https://ecolab-prediction.cognitiveservices.azure.com/"
-    publish_iteration_name = "Iteration2"
+    publish_iteration_name = "Ecolab3"
     test_image = image_path
     trainer = CustomVisionTrainingClient(training_key, endpoint=ENDPOINT)
     predictor = CustomVisionPredictionClient(prediction_key, endpoint=ENDPOINT)
@@ -28,15 +28,15 @@ def classify(image_path):
 def take_picture():
     camera = cv.VideoCapture(0)
     ret, frame = camera.read()
-    print(ret)
-    cv.imshow("test", frame)
+    # print(ret)
+    # cv.imshow("test", frame)
     img_name = "cv_frame.png"
     cv.imwrite(img_name, frame)
+
+
     print("{} written!".format(img_name))
     camera.release()
     cv.destroyAllWindows()
-    return classify('./cv_frame.png')
-
-take_picture()
-
-
+    x = classify('./cv_frame.png')
+    print(x)
+    return x
